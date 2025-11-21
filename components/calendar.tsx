@@ -1,4 +1,5 @@
 "use client";
+import heLocale from '@fullcalendar/core/locales/he';
 
 import { useEvents } from "@/context/events-context";
 import "@/styles/calendar.css";
@@ -216,7 +217,9 @@ export default function Calendar() {
       <Card className="p-3">
         <FullCalendar
           ref={calendarRef}
-          timeZone="local"
+          timeZone="Asia/Jerusalem"
+          direction="rtl"
+          locale={heLocale}
           plugins={[
             dayGridPlugin,
             timeGridPlugin,
@@ -229,7 +232,7 @@ export default function Calendar() {
           slotMinTime={calendarEarliestTime}
           slotMaxTime={calendarLatestTime}
           allDaySlot={false}
-          firstDay={1}
+          firstDay={0}
           height={"32vh"}
           displayEventEnd={true}
           windowResizeDelay={0}
@@ -237,12 +240,12 @@ export default function Calendar() {
           slotLabelFormat={{
             hour: "numeric",
             minute: "2-digit",
-            hour12: true,
+            hour12: false,
           }}
           eventTimeFormat={{
             hour: "numeric",
             minute: "2-digit",
-            hour12: true,
+            hour12: false,
           }}
           eventBorderColor={"black"}
           contentHeight={"auto"}

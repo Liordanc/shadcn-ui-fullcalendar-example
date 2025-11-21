@@ -12,6 +12,19 @@ body {
   }
 }
 
+/* תמיכה ב-RTL ליומן */
+[dir="rtl"] .fc {
+  direction: rtl;
+}
+
+[dir="rtl"] .fc-toolbar {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .fc-daygrid-day-number {
+  text-align: right !important;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
