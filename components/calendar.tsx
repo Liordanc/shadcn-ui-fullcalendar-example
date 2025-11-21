@@ -219,6 +219,7 @@ export default function Calendar() {
           ref={calendarRef}
           timeZone="Asia/Jerusalem"
           direction="rtl"
+          
           locale={heLocale}
           plugins={[
             dayGridPlugin,
@@ -245,7 +246,8 @@ export default function Calendar() {
           eventTimeFormat={{
             hour: "numeric",
             minute: "2-digit",
-            hour12: false,
+            hour12: false
+            ,
           }}
           eventBorderColor={"black"}
           contentHeight={"auto"}
