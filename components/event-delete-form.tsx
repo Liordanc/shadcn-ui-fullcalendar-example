@@ -31,9 +31,9 @@ export function EventDeleteForm({ id, title }: EventDeleteFormProps) {
     setEventDeleteOpen(false);
     setEventViewOpen(false);
     toast({
-      title: "Event deleted!",
+      title: "אירוע נמחק!",
       action: (
-        <ToastAction altText={"Dismiss notification."}>Dismiss</ToastAction>
+        <ToastAction altText={"סגור התראה."}>סגור</ToastAction>
       ),
     });
   }
@@ -42,22 +42,22 @@ export function EventDeleteForm({ id, title }: EventDeleteFormProps) {
     <AlertDialog open={eventDeleteOpen}>
       <AlertDialogTrigger asChild>
         <Button variant="destructive" onClick={() => setEventDeleteOpen(true)}>
-          Delete Event
+          מחק אירוע
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle className="flex flex-row justify-between items-center">
-            <h1>Delete {title}</h1>
+            <h1>מחיקת {title}</h1>
           </AlertDialogTitle>
-          Are you sure you want to delete this event?
+          האם אתה בטוח שברצונך למחוק אירוע זה?
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel onClick={() => setEventDeleteOpen(false)}>
-            Cancel
+            ביטול
           </AlertDialogCancel>
           <Button variant="destructive" onClick={() => onSubmit()}>
-            Delete
+            מחק
           </Button>
         </AlertDialogFooter>
       </AlertDialogContent>

@@ -36,22 +36,22 @@ import { Button } from "./ui/button";
 const eventEditFormSchema = z.object({
   id: z.string(),
   title: z
-    .string({ required_error: "Please enter a title." })
-    .min(1, { message: "Must provide a title for this event." }),
+    .string({ required_error: "נא להזין כותרת." })
+    .min(1, { message: "חובה לספק כותרת לאירוע זה." }),
   description: z
-    .string({ required_error: "Please enter a description." })
-    .min(1, { message: "Must provide a description for this event." }),
+    .string({ required_error: "נא להזין תיאור." })
+    .min(1, { message: "חובה לספק תיאור לאירוע זה." }),
   start: z.date({
-    required_error: "Please select a start time",
-    invalid_type_error: "That's not a date!",
+    required_error: "נא לבחור שעת התחלה",
+    invalid_type_error: "זה לא תאריך תקין!",
   }),
   end: z.date({
-    required_error: "Please select an end time",
-    invalid_type_error: "That's not a date!",
+    required_error: "נא לבחור שעת סיום",
+    invalid_type_error: "זה לא תאריך תקין!",
   }),
   color: z
-    .string({ required_error: "Please select an event color." })
-    .min(1, { message: "Must provide a title for this event." }),
+    .string({ required_error: "נא לבחור צבע לאירוע." })
+    .min(1, { message: "חובה לבחור צבע לאירוע זה." }),
 });
 
 type EventEditFormValues = z.infer<typeof eventEditFormSchema>;
@@ -120,10 +120,10 @@ export function EventEditForm({
     setEventEditOpen(false);
 
     toast({
-      title: "Event edited!",
+      title: "אירוע עודכן!",
       action: (
-        <ToastAction altText={"Click here to dismiss notification"}>
-          Dismiss
+        <ToastAction altText={"לחץ כאן לסגירת ההתראה"}>
+          סגור
         </ToastAction>
       ),
     });
@@ -138,14 +138,14 @@ export function EventEditForm({
             variant="default"
             onClick={() => setEventEditOpen(true)}
           >
-            Edit Event
+            ערוך אירוע
           </Button>
         </AlertDialogTrigger>
       )}
 
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Edit {event?.title}</AlertDialogTitle>
+          <AlertDialogTitle>עריכת {event?.title}</AlertDialogTitle>
         </AlertDialogHeader>
 
         <Form {...form}>
@@ -155,9 +155,9 @@ export function EventEditForm({
               name="title"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Title</FormLabel>
+                  <FormLabel>כותרת</FormLabel>
                   <FormControl>
-                    <Input placeholder="Standup Meeting" {...field} />
+                    <Input placeholder="פגישת צוות יומית" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -168,10 +168,10 @@ export function EventEditForm({
               name="description"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Description</FormLabel>
+                  <FormLabel>תיאור</FormLabel>
                   <FormControl>
                     <Textarea
-                      placeholder="Daily session"
+                      placeholder="מפגש יומי של הצוות"
                       className="resize-none"
                       {...field}
                     />
@@ -185,12 +185,12 @@ export function EventEditForm({
               name="start"
               render={({ field }) => (
                 <FormItem className="flex flex-col">
-                  <FormLabel htmlFor="datetime">Start</FormLabel>
+                  <FormLabel htmlFor="datetime">התחלה</FormLabel>
                   <FormControl>
                     <DateTimePicker
                       value={field.value}
                       onChange={field.onChange}
-                      hourCycle={12}
+                      hourCycle={24}
                       granularity="minute"
                     />
                   </FormControl>
@@ -203,12 +203,12 @@ export function EventEditForm({
               name="end"
               render={({ field }) => (
                 <FormItem className="flex flex-col">
-                  <FormLabel htmlFor="datetime">End</FormLabel>
+                  <FormLabel htmlFor="datetime">סיום</FormLabel>
                   <FormControl>
                     <DateTimePicker
                       value={field.value}
                       onChange={field.onChange}
-                      hourCycle={12}
+                      hourCycle={24}
                       granularity="minute"
                     />
                   </FormControl>
@@ -221,7 +221,7 @@ export function EventEditForm({
               name="color"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Color</FormLabel>
+                  <FormLabel>צבע</FormLabel>
                   <FormControl>
                     <Popover>
                       <PopoverTrigger asChild className="cursor-pointer">
@@ -248,9 +248,9 @@ export function EventEditForm({
             />
             <AlertDialogFooter className="pt-2">
               <AlertDialogCancel onClick={() => handleEditCancellation()}>
-                Cancel
+                ביטול
               </AlertDialogCancel>
-              <AlertDialogAction type="submit">Save</AlertDialogAction>
+              <AlertDialogAction type="submit">שמור</AlertDialogAction>
             </AlertDialogFooter>
           </form>
         </Form>
