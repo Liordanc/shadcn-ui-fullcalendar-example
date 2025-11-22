@@ -69,7 +69,7 @@ export default function CalendarNav({
 
   return (
     <div className="flex flex-wrap min-w-full justify-center gap-3 px-10 ">
-      <div className="flex flex-row space-x-1">
+      <div className="flex flex-row gap-1">
         {/* Navigate to previous date interval */}
 
         <Button
@@ -240,7 +240,7 @@ export default function CalendarNav({
               onClick={() =>
                 setView(calendarRef, "timeGridDay", setCurrentView)
               }
-              className={`space-x-1 ${
+              className={`${
                 currentView === "timeGridDay" ? "w-1/2" : "w-1/4"
               }`}
             >
@@ -254,7 +254,7 @@ export default function CalendarNav({
               onClick={() =>
                 setView(calendarRef, "timeGridWeek", setCurrentView)
               }
-              className={`space-x-1 ${
+              className={`${
                 currentView === "timeGridWeek" ? "w-1/2" : "w-1/4"
               }`}
             >
@@ -268,7 +268,7 @@ export default function CalendarNav({
               onClick={() =>
                 setView(calendarRef, "dayGridMonth", setCurrentView)
               }
-              className={`space-x-1 ${
+              className={`${
                 currentView === "dayGridMonth" ? "w-1/2" : "w-1/4"
               }`}
             >

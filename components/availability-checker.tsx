@@ -18,7 +18,7 @@ import { CalendarEvent, earliestTime, latestTime } from "@/utils/data";
 import { getDateFromMinutes } from "@/lib/utils";
 import { AvailabilityCheckerEventAddForm } from "./availability-checker-event-add-form";
 import { TimePicker } from "./ui/time-picker/time-picker";
-import { formatTimeSlot } from "@/lib/i18n-config";
+import { formatTimeSlot, DATE_FNS_LOCALE } from "@/lib/i18n-config";
 
 export default function AvailabilityChecker() {
   const { events, setAvailabilityCheckerEventAddOpen } = useEvents();
@@ -216,6 +216,7 @@ export default function AvailabilityChecker() {
               onSelect={setDate}
               disabled={(date) => date <= dateObj}
               className="rounded-md border shadow-md"
+              locale={DATE_FNS_LOCALE}
             />
           </div>
 
