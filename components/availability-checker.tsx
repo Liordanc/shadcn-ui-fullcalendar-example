@@ -18,6 +18,7 @@ import { CalendarEvent, earliestTime, latestTime } from "@/utils/data";
 import { getDateFromMinutes } from "@/lib/utils";
 import { AvailabilityCheckerEventAddForm } from "./availability-checker-event-add-form";
 import { TimePicker } from "./ui/time-picker/time-picker";
+import { formatTimeSlot } from "@/lib/i18n-config";
 
 export default function AvailabilityChecker() {
   const { events, setAvailabilityCheckerEventAddOpen } = useEvents();
@@ -195,7 +196,6 @@ export default function AvailabilityChecker() {
           <TimePicker
             date={selectedStartTime}
             setDate={setSelectedStartTime}
-            defaultPeriod="AM"
           />
         </div>
         <div className="flex flex-col items-center p-1">
@@ -203,7 +203,6 @@ export default function AvailabilityChecker() {
           <TimePicker
             date={selectedLastTime}
             setDate={setSelectedLastTime}
-            defaultPeriod="PM"
           />
         </div>
       </div>
@@ -228,11 +227,7 @@ export default function AvailabilityChecker() {
                   onClick={() => handleSlotClick(slot)}
                   className="flex py-2 px-4 my-2 mx-auto w-11/12 bg-secondary hover:bg-secondary/40 cursor-pointer hover:scale-[1.03] transition-all shadow-sm"
                 >
-                  {slot.toLocaleString("he-IL", {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                    hour12: false,
-                  })}
+                  {formatTimeSlot(slot)}
                 </Card>
               ))}
             </ScrollArea>

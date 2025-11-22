@@ -11,6 +11,7 @@ import { EventDeleteForm } from "./event-delete-form";
 import { EventEditForm } from "./event-edit-form";
 import { useEvents } from "@/context/events-context";
 import { X } from "lucide-react";
+import { formatTime } from "@/lib/i18n-config";
 
 interface EventViewProps {
   event?: CalendarEvent;
@@ -33,7 +34,7 @@ export function EventView({ event }: EventViewProps) {
             <table>
               <tr>
                 <th>שעה:</th>
-                <td>{`${event?.start.toLocaleTimeString("he-IL", { hour: "2-digit", minute: "2-digit", hour12: false })} - ${event?.end.toLocaleTimeString("he-IL", { hour: "2-digit", minute: "2-digit", hour12: false })}`}</td>
+                <td>{event?.start && event?.end ? `${formatTime(event.start)} - ${formatTime(event.end)}` : "-"}</td>
               </tr>
               <tr>
                 <th>תיאור:</th>

@@ -1,5 +1,5 @@
 "use client";
-import heLocale from '@fullcalendar/core/locales/he';
+import { FULLCALENDAR_LOCALE, DEFAULT_TIMEZONE } from "@/lib/i18n-config";
 
 import { useEvents } from "@/context/events-context";
 import "@/styles/calendar.css";
@@ -217,9 +217,9 @@ export default function Calendar() {
       <Card className="p-3">
         <FullCalendar
           ref={calendarRef}
-          timeZone="Asia/Jerusalem"
+          timeZone={DEFAULT_TIMEZONE}
           direction="rtl"
-          locale={heLocale}
+          locale={FULLCALENDAR_LOCALE}
           plugins={[
             dayGridPlugin,
             timeGridPlugin,

@@ -32,6 +32,7 @@ import { useEvents } from "@/context/events-context";
 import { ToastAction } from "./ui/toast";
 import { CalendarEvent } from "@/utils/data";
 import { Button } from "./ui/button";
+import { HOUR_CYCLE } from "@/lib/i18n-config";
 
 const eventEditFormSchema = z.object({
   id: z.string(),
@@ -190,7 +191,7 @@ export function EventEditForm({
                     <DateTimePicker
                       value={field.value}
                       onChange={field.onChange}
-                      hourCycle={24}
+                      hourCycle={HOUR_CYCLE}
                       granularity="minute"
                     />
                   </FormControl>
@@ -208,7 +209,7 @@ export function EventEditForm({
                     <DateTimePicker
                       value={field.value}
                       onChange={field.onChange}
-                      hourCycle={24}
+                      hourCycle={HOUR_CYCLE}
                       granularity="minute"
                     />
                   </FormControl>

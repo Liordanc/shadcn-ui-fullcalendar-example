@@ -2,17 +2,13 @@
 
 import * as React from "react";
 import { TimePickerInput } from "./time-picker-input";
-import { TimePeriodSelect } from "./period-select";
-import { Period } from "./time-picker-utils";
 
 interface TimePickerProps {
   date: Date | undefined;
   setDate: (date: Date | undefined) => void;
-  defaultPeriod: Period | "AM";
 }
 
-export function TimePicker({ date, setDate, defaultPeriod }: TimePickerProps) {
-  const [period, setPeriod] = React.useState<Period>(defaultPeriod);
+export function TimePicker({ date, setDate }: TimePickerProps) {
 
   const minuteRef = React.useRef<HTMLInputElement>(null);
   const hourRef = React.useRef<HTMLInputElement>(null);
