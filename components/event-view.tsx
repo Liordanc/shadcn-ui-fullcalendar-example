@@ -32,15 +32,15 @@ export function EventView({ event }: EventViewProps) {
             </AlertDialogTitle>
             <table>
               <tr>
-                <th>Time:</th>
-                <td>{`${event?.start.toLocaleTimeString()} - ${event?.end.toLocaleTimeString()}`}</td>
+                <th>שעה:</th>
+                <td>{`${event?.start.toLocaleTimeString("he-IL", { hour: "2-digit", minute: "2-digit", hour12: false })} - ${event?.end.toLocaleTimeString("he-IL", { hour: "2-digit", minute: "2-digit", hour12: false })}`}</td>
               </tr>
               <tr>
-                <th>Description:</th>
+                <th>תיאור:</th>
                 <td>{event?.description}</td>
               </tr>
               <tr>
-                <th>Color:</th>
+                <th>צבע:</th>
                 <td>
                   <div
                     className="rounded-full w-5 h-5"

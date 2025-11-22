@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 import { add, format } from "date-fns";
-import { type Locale, enUS } from "date-fns/locale";
+import { type Locale, he } from "date-fns/locale";
 import {
   Calendar as CalendarIcon,
   ChevronLeft,
@@ -259,7 +259,7 @@ function Calendar({
   ...props
 }: CalendarProps & { yearRange?: number }) {
   const MONTHS = React.useMemo(() => {
-    let locale: Pick<Locale, "options" | "localize" | "formatLong"> = enUS;
+    let locale: Pick<Locale, "options" | "localize" | "formatLong"> = he;
     const { options, localize, formatLong } = props.locale || {};
     if (options && localize && formatLong) {
       locale = {
@@ -713,7 +713,7 @@ const DateTimePicker = React.forwardRef<
 >(
   (
     {
-      locale = enUS,
+      locale = he,
       value,
       onChange,
       hourCycle = 24,
@@ -721,7 +721,7 @@ const DateTimePicker = React.forwardRef<
       disabled = false,
       displayFormat,
       granularity = "second",
-      placeholder = "Pick a date",
+      placeholder = "בחר תאריך",
       className,
       ...props
     },
@@ -765,11 +765,11 @@ const DateTimePicker = React.forwardRef<
         `PP hh:mm${!granularity || granularity === "second" ? ":ss" : ""} b`,
     };
 
-    let loc = enUS;
+    let loc = he;
     const { options, localize, formatLong } = locale;
     if (options && localize && formatLong) {
       loc = {
-        ...enUS,
+        ...he,
         options,
         localize,
         formatLong,

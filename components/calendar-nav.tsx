@@ -95,15 +95,15 @@ export default function CalendarNav({
                 {selectedDay
                   ? dayOptions.find((day) => day.value === String(selectedDay))
                       ?.label
-                  : "Select day..."}
+                  : "בחר יום..."}
                 <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
               </Button>
             </PopoverTrigger>
             <PopoverContent className="w-[200px] p-0">
               <Command>
-                <CommandInput placeholder="Search day..." />
+                <CommandInput placeholder="חפש יום..." />
                 <CommandList>
-                  <CommandEmpty>No day found.</CommandEmpty>
+                  <CommandEmpty>לא נמצא יום.</CommandEmpty>
                   <CommandGroup>
                     {dayOptions.map((day) => (
                       <CommandItem
@@ -149,15 +149,15 @@ export default function CalendarNav({
               {selectedMonth
                 ? months.find((month) => month.value === String(selectedMonth))
                     ?.label
-                : "Select month..."}
+                : "בחר חודש..."}
               <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-[200px] p-0">
             <Command>
-              <CommandInput placeholder="Search month..." />
+              <CommandInput placeholder="חפש חודש..." />
               <CommandList>
-                <CommandEmpty>No month found.</CommandEmpty>
+                <CommandEmpty>לא נמצא חודש.</CommandEmpty>
                 <CommandGroup>
                   {months.map((month) => (
                     <CommandItem
@@ -223,11 +223,11 @@ export default function CalendarNav({
           }}
         >
           {currentView === "timeGridDay"
-            ? "Today"
+            ? "היום"
             : currentView === "timeGridWeek"
-            ? "This Week"
+            ? "השבוע"
             : currentView === "dayGridMonth"
-            ? "This Month"
+            ? "החודש"
             : null}
         </Button>
 
@@ -246,7 +246,7 @@ export default function CalendarNav({
             >
               <GalleryVertical className="h-5 w-5" />
               {currentView === "timeGridDay" && (
-                <p className="text-xs md:text-sm">Day</p>
+                <p className="text-xs md:text-sm">יום</p>
               )}
             </TabsTrigger>
             <TabsTrigger
@@ -260,7 +260,7 @@ export default function CalendarNav({
             >
               <Tally3 className="h-5 w-5" />
               {currentView === "timeGridWeek" && (
-                <p className="text-xs md:text-sm">Week</p>
+                <p className="text-xs md:text-sm">שבוע</p>
               )}
             </TabsTrigger>
             <TabsTrigger
@@ -274,7 +274,7 @@ export default function CalendarNav({
             >
               <Table className="h-5 w-5 rotate-90" />
               {currentView === "dayGridMonth" && (
-                <p className="text-xs md:text-sm">Month</p>
+                <p className="text-xs md:text-sm">חודש</p>
               )}
             </TabsTrigger>
           </TabsList>

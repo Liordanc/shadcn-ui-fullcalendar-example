@@ -10,51 +10,51 @@ export const latestTime = 1320;
 export const months = [
   {
     value: "1",
-    label: "January",
+    label: "ינואר",
   },
   {
     value: "2",
-    label: "February",
+    label: "פברואר",
   },
   {
     value: "3",
-    label: "March",
+    label: "מרץ",
   },
   {
     value: "4",
-    label: "April",
+    label: "אפריל",
   },
   {
     value: "5",
-    label: "May",
+    label: "מאי",
   },
   {
     value: "6",
-    label: "June",
+    label: "יוני",
   },
   {
     value: "7",
-    label: "July",
+    label: "יולי",
   },
   {
     value: "8",
-    label: "August",
+    label: "אוגוסט",
   },
   {
     value: "9",
-    label: "September",
+    label: "ספטמבר",
   },
   {
     value: "10",
-    label: "October",
+    label: "אוקטובר",
   },
   {
     value: "11",
-    label: "November",
+    label: "נובמבר",
   },
   {
     value: "12",
-    label: "December",
+    label: "דצמבר",
   },
 ];
 

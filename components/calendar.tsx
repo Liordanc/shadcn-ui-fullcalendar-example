@@ -133,7 +133,7 @@ export default function Calendar() {
         {info.view.type == "timeGridDay" ? (
           <div className="flex flex-col rounded-sm">
             <p>
-              {info.date.toLocaleDateString("en-US", {
+              {info.date.toLocaleDateString("he-IL", {
                 month: "long",
                 day: "numeric",
                 year: "numeric",
