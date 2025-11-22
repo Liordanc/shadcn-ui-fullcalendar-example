@@ -118,7 +118,7 @@ export function AvailabilityCheckerEventAddForm({
         </Card>
       </AlertDialogTrigger> */}
       <AlertDialogContent>
-        <AlertDialogHeader>
+        <AlertDialogHeader dir="rtl">
           <AlertDialogTitle>Add Event</AlertDialogTitle>
         </AlertDialogHeader>
 

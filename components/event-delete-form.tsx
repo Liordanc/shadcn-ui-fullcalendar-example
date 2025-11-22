@@ -46,8 +46,8 @@ export function EventDeleteForm({ id, title }: EventDeleteFormProps) {
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
-        <AlertDialogHeader>
-          <AlertDialogTitle className="flex flex-row justify-between items-center">
+        <AlertDialogHeader dir="rtl">
+          <AlertDialogTitle className="flex flex-row-reverse justify-between items-center">
             <h1>מחיקת {title}</h1>
           </AlertDialogTitle>
           האם אתה בטוח שברצונך למחוק אירוע זה?

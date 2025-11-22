@@ -172,13 +172,13 @@ export default function AvailabilityChecker() {
     <div className="mx-2 md:mx-5">
       <div className="flex flex-wrap justify-center space-x-2 text-xs md:text-md lg:text-base">
         <div className="flex flex-col items-center p-1">
-          Session Length
+          משך מפגש
           <Select
             onValueChange={(value) => setSessionLength(parseInt(value, 10))}
             defaultValue={String(sessionLength)}
           >
             <SelectTrigger id="sessionLength">
-              <SelectValue placeholder="Select" />
+              <SelectValue placeholder="בחר" />
             </SelectTrigger>
             <SelectContent position="popper">
               <SelectItem value="45">45</SelectItem>
@@ -191,7 +191,7 @@ export default function AvailabilityChecker() {
           </Select>
         </div>
         <div className="flex flex-col items-center p-1">
-          Earliest Time
+          שעה מוקדמת
           <TimePicker
             date={selectedStartTime}
             setDate={setSelectedStartTime}
@@ -199,7 +199,7 @@ export default function AvailabilityChecker() {
           />
         </div>
         <div className="flex flex-col items-center p-1">
-          Latest Time
+          שעה מאוחרת
           <TimePicker
             date={selectedLastTime}
             setDate={setSelectedLastTime}
@@ -228,9 +228,10 @@ export default function AvailabilityChecker() {
                   onClick={() => handleSlotClick(slot)}
                   className="flex py-2 px-4 my-2 mx-auto w-11/12 bg-secondary hover:bg-secondary/40 cursor-pointer hover:scale-[1.03] transition-all shadow-sm"
                 >
-                  {slot.toLocaleString("en-US", {
-                    hour: "numeric",
-                    minute: "numeric",
+                  {slot.toLocaleString("he-IL", {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: false,
                   })}
                 </Card>
               ))}

@@ -114,7 +114,7 @@ export function EventAddForm({ start, end }: EventAddFormProps) {
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
-        <AlertDialogHeader>
+        <AlertDialogHeader dir="rtl">
           <AlertDialogTitle>הוספת אירוע</AlertDialogTitle>
         </AlertDialogHeader>
 

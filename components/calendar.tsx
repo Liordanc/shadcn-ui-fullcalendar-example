@@ -126,7 +126,7 @@ export default function Calendar() {
   };
 
   const DayHeader = ({ info }: DayHeaderProps) => {
-    const [weekday] = info.text.split(" ");
+    const weekday = info.date.toLocaleDateString("he-IL", { weekday: "long" });
 
     return (
       <div className="flex items-center h-full overflow-hidden">

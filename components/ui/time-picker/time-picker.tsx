@@ -16,7 +16,6 @@ export function TimePicker({ date, setDate, defaultPeriod }: TimePickerProps) {
 
   const minuteRef = React.useRef<HTMLInputElement>(null);
   const hourRef = React.useRef<HTMLInputElement>(null);
-  const periodRef = React.useRef<HTMLButtonElement>(null);
 
   return (
     <div className="flex items-center gap-2">
@@ -25,8 +24,7 @@ export function TimePicker({ date, setDate, defaultPeriod }: TimePickerProps) {
           Hours
         </Label> */}
         <TimePickerInput
-          picker="12hours"
-          period={period}
+          picker="hours"
           date={date}
           setDate={setDate}
           ref={hourRef}
@@ -39,23 +37,11 @@ export function TimePicker({ date, setDate, defaultPeriod }: TimePickerProps) {
         </Label> */}
         <TimePickerInput
           picker="minutes"
-          id="minutes12"
+          id="minutes24"
           date={date}
           setDate={setDate}
           ref={minuteRef}
           onLeftFocus={() => hourRef.current?.focus()}
-        />
-      </div>
-      <div className="grid gap-1 text-center">
-        {/* <Label htmlFor="period" className="text-xs">
-          Period
-        </Label> */}
-        <TimePeriodSelect
-          period={period}
-          setPeriod={setPeriod}
-          date={date}
-          setDate={setDate}
-          ref={periodRef}
         />
       </div>
     </div>

@@ -144,7 +144,7 @@ export function EventEditForm({
       )}
 
       <AlertDialogContent>
-        <AlertDialogHeader>
+        <AlertDialogHeader dir="rtl">
           <AlertDialogTitle>עריכת {event?.title}</AlertDialogTitle>
         </AlertDialogHeader>
 
